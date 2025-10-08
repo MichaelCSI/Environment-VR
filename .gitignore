@@ -1,0 +1,35 @@
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+Obj/
+UserSettings/
+Assets/AssetStoreTools*
+
+# Visual Studio / Rider
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Crash Reports
+sysinfo.txt
+
+# Other
+*.apk
+*.aab
+*.unitypackage
+.DS_Store
