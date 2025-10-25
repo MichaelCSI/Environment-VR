@@ -6,6 +6,7 @@ TagManager:
   tags:
   - water
   - grass
+  - slippery
   layers:
   - Default
   - TransparentFX
