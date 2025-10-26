@@ -35,8 +35,10 @@ public class MovementPhysics : MonoBehaviour
 
             // Going uphill - shift rig upwards to account for Y difference, account for camera offset
             Vector3 targetPosition = transform.position;
-            float targetY = hit.point.y - rigTransform.localPosition.y + 1.3f;
-            if(targetY > targetPosition.y)
+            float targetY = hit.point.y;
+            float rayRigDifferenceY = targetPosition.y - hit.point.y;
+
+            if(targetY > targetPosition.y && rayRigDifferenceY < -0.1)
             {
                 if(hit.collider.CompareTag("water")){
                     // "Waist-deep" for water
