@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3c7bd6529e7708642a925d5e059a7257
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 321423
+  packageName: Realistic Worn Trash Can
+  packageVersion: 1.0
+  assetPath: Assets/WornTrashCan/Worn Trash Can/WornTrashCan_LOD1.mat
+  uploadId: 759287
