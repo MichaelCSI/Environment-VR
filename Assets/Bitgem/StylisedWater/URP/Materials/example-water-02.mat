@@ -13,7 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -109,6 +109,7 @@ Material:
     - _WaveScale: 0
     - _WaveSpeed: 0.1
     - _WorkflowMode: 1
+    - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     m_Colors:
     - Color_7D9A58EC: {r: 0.049127813, g: 0.21262987, b: 0.4528302, a: 0.9843137}

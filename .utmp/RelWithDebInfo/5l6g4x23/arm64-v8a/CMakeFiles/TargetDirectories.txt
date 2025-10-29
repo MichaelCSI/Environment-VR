@@ -1,0 +1,5 @@
+/Users/michaelosullivan/Coding/Environment-VR/.utmp/RelWithDebInfo/5l6g4x23/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/michaelosullivan/Coding/Environment-VR/.utmp/RelWithDebInfo/5l6g4x23/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/michaelosullivan/Coding/Environment-VR/.utmp/RelWithDebInfo/5l6g4x23/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/michaelosullivan/Coding/Environment-VR/.utmp/RelWithDebInfo/5l6g4x23/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/michaelosullivan/Coding/Environment-VR/.utmp/RelWithDebInfo/5l6g4x23/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
