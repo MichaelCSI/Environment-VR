@@ -24,14 +24,15 @@ public class MovementPhysics : MonoBehaviour
         {
             float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
 
-            // Steep slippery surface, slide down (e.g. world boundary)
-            if (hit.collider.CompareTag("slippery") && slopeAngle > slideThreshold)
-            {
-                // Normalize slope so it's 0 at threshold and 1 at 90 degrees - adjust slide speed based on slope
-                float slopeFactor = Mathf.InverseLerp(slideThreshold, 90f, slopeAngle);
-                Vector3 slideDirection = Vector3.ProjectOnPlane(Vector3.down, hit.normal).normalized;
-                transform.position += slideDirection * (slideSpeed * slopeFactor) * Time.deltaTime;
-            }
+            // // Steep slippery surface, slide down (e.g. world boundary)
+            // // Not using for now, was a bit choppy
+            // if (hit.collider.CompareTag("slippery") && slopeAngle > slideThreshold)
+            // {
+            //     // Normalize slope so it's 0 at threshold and 1 at 90 degrees - adjust slide speed based on slope
+            //     float slopeFactor = Mathf.InverseLerp(slideThreshold, 90f, slopeAngle);
+            //     Vector3 slideDirection = Vector3.ProjectOnPlane(Vector3.down, hit.normal).normalized;
+            //     transform.position += slideDirection * (slideSpeed * slopeFactor) * Time.deltaTime;
+            // }
 
             // Going uphill - shift rig upwards to account for Y difference, account for camera offset
             Vector3 targetPosition = transform.position;
