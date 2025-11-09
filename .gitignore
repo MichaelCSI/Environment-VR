@@ -28,6 +28,10 @@ Assets/AssetStoreTools*
 # Crash Reports
 sysinfo.txt
 
+# Unity simulation backups and temporary runs
+environment_sim_run_BackUpThisFolder_ButDontShipItWithYourGame/
+Environment\ Sim_BurstDebugInformation_DoNotShip/
+
 # Other
 *.apk
 *.aab
