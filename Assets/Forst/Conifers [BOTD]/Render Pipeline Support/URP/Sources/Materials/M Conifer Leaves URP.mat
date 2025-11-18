@@ -60,18 +60,18 @@ Material:
     - _LEAFTUMBLING: 1
     - _LEAFTURBULENCE: 1
     - _LeafNoise: 0.1
-    - _LeafTurbulence: 0.93
+    - _LeafTurbulence: 0.2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.68
-    - _TumbleFrequency: 0.15
-    - _TumbleStrength: 0.03
+    - _TumbleFrequency: 0.01
+    - _TumbleStrength: 0.001
     m_Colors:
-    - _AdvancedEdgeBending: {r: 0.01, g: 0.15, b: 0, a: 0}
+    - _AdvancedEdgeBending: {r: 0.1, g: 5, b: 0, a: 0}
     - _HueVariation: {r: 0, g: 0.9019608, b: 0.827451, a: 0.101960786}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Translucency: {r: 1.5, g: 2, b: 0.01, a: 0}
-    - _WindMultipliers: {r: 1.59, g: 1.08, b: 0.78, a: 0}
+    - _Translucency: {r: 0, g: 0, b: 0, a: 0}
+    - _WindMultipliers: {r: 0.03, g: 0.13, b: 0.05, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3460565933043572204
