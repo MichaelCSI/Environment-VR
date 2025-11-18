@@ -64,7 +64,7 @@ Material:
     - _QueueOffset: 0
     - _Smoothness: 1
     m_Colors:
-    - _BaseWindMultipliers: {r: 0.5, g: 2, b: 1, a: 0}
+    - _BaseWindMultipliers: {r: 0, g: 0, b: 0, a: 0}
     - _HueVariation: {r: 0, g: 0.9, b: 0.8255172, a: 0.1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

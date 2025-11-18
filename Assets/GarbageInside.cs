@@ -1,6 +1,9 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using System.Collections;
 using System.Collections.Generic;
+
 
 public class GarbageInside : MonoBehaviour
 {
@@ -12,14 +15,42 @@ public class GarbageInside : MonoBehaviour
     public float heightTolerance = 0.5f;   // Vertical range allowed
     public float prefabHeightOffset = 0.2f;       // Offset for starting height 
 
-    [Header("Objects to Fade (e.g. flowers)")]
+    [Header("Sprites to Fade (e.g. flowers) when object enters bin")]
     public SpriteRenderer[] objectsToFade;
     public float fadeSpeed = 0.4f; // how fast to fade objects in/out
 
+    [Header("Optional Audio to play when object enters bin")]
+    public AudioSource audioSource;    // Optional audio source
+
+    [Header("Post Processing (URP)")]
+    public Volume postProcessVolume;  // Assign your Global Volume
+    private ColorAdjustments colorAdjustments;
+    public float colorFadeSpeed = 2f; // How fast saturation changes
+
     private bool garbageInBin = false;
 
-    // Track individual fade coroutines for each SpriteRenderer
+    // Track individual object fade and audio coroutines
     private Dictionary<SpriteRenderer, Coroutine> fadeCoroutines = new Dictionary<SpriteRenderer, Coroutine>();
+    private Coroutine saturationCoroutine;
+
+    void Start()
+    {
+        // Grab Color Adjustments from the Volume
+        if (postProcessVolume != null)
+        {
+            if (postProcessVolume.profile.TryGet(out ColorAdjustments ca))
+            {
+                colorAdjustments = ca;
+                // Start scene in black & white
+                colorAdjustments.saturation.value = -100f;
+            }
+            else
+            {
+                Debug.LogWarning("Color Adjustments override missing from Volume.");
+            }
+        }
+    }
+
 
     void Update()
     {
@@ -41,6 +72,7 @@ public class GarbageInside : MonoBehaviour
         {
             garbageInBin = inBin;
 
+            // Fade in objects
             foreach (var sr in objectsToFade)
             {
                 if (sr == null) continue;
@@ -51,6 +83,21 @@ public class GarbageInside : MonoBehaviour
 
                 // Start new fade for this SpriteRenderer
                 fadeCoroutines[sr] = StartCoroutine(FadeSprite(sr, garbageInBin ? 1f : 0f));
+            }
+
+            // Play audio if present
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
+            // Trigger saturation change (black & white to color)
+            if (colorAdjustments != null)
+            {
+                if (saturationCoroutine != null)
+                    StopCoroutine(saturationCoroutine);
+
+                saturationCoroutine = StartCoroutine(LerpSaturation(garbageInBin ? 0f : -100f));
             }
         }
     }
@@ -65,4 +112,20 @@ public class GarbageInside : MonoBehaviour
             yield return null;
         }
     }
+
+    IEnumerator LerpSaturation(float target)
+    {
+        float start = colorAdjustments.saturation.value;
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime * colorFadeSpeed;
+            colorAdjustments.saturation.value = Mathf.Lerp(start, target, t);
+            yield return null;
+        }
+
+        colorAdjustments.saturation.value = target;
+    }
+
 }
