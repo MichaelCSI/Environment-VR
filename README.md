@@ -23,3 +23,28 @@ Jennifer Vogel
 
 ![Screenshot 4](https://github.com/MichaelCSI/Environment-VR/blob/main/screenshots/demo_4.png)
 
+
+## Unity Model & Skybox Credits
+
+[URP Stylized Water Shader - Proto Series](https://assetstore.unity.com/packages/vfx/shaders/urp-stylized-water-shader-proto-series-187485)
+
+[Nature Starter Kit 2](https://assetstore.unity.com/packages/3d/environments/nature-starter-kit-2-52977)
+
+[Grass Flowers Pack Free](https://assetstore.unity.com/packages/2d/textures-materials/nature/grass-flowers-pack-free-138810)
+
+[Conifers [BOTD]](https://assetstore.unity.com/packages/3d/vegetation/trees/conifers-botd-142076)
+
+[Low Poly Animals 3D assets](https://assetstore.unity.com/packages/3d/characters/animals/low-poly-animals-3d-assets-258476)
+
+[Realistic Worn Trash Can](https://assetstore.unity.com/packages/3d/props/realistic-worn-trash-can-321423)
+
+[Aluminum Can "Standard"](https://assetstore.unity.com/packages/3d/props/exterior/aluminum-can-standard-210802)
+
+[Fantasy Skybox FREE](https://assetstore.unity.com/packages/2d/textures-materials/sky/fantasy-skybox-free-18353)
+
+## Unity Audio Credits
+
+[Nature - Essentials](https://assetstore.unity.com/packages/audio/ambient/nature/nature-essentials-208227)
+
+[Footsteps - Essentials](https://assetstore.unity.com/packages/audio/sound-fx/foley/footsteps-essentials-189879)
+
