@@ -40,6 +40,8 @@ Jennifer Vogel
 
 [Aluminum Can "Standard"](https://assetstore.unity.com/packages/3d/props/exterior/aluminum-can-standard-210802)
 
+[Animals FREE - Animated Low Poly 3D Models](https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727)
+
 [Fantasy Skybox FREE](https://assetstore.unity.com/packages/2d/textures-materials/sky/fantasy-skybox-free-18353)
 
 ## Unity Audio Credits
