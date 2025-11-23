@@ -44,9 +44,12 @@ Jennifer Vogel
 
 [Fantasy Skybox FREE](https://assetstore.unity.com/packages/2d/textures-materials/sky/fantasy-skybox-free-18353)
 
+[Environment Pack - Rocks Stylized](https://assetstore.unity.com/packages/3d/environments/environment-pack-rocks-stylized-316250)
+
 ## Unity Audio Credits
 
 [Nature - Essentials](https://assetstore.unity.com/packages/audio/ambient/nature/nature-essentials-208227)
 
 [Footsteps - Essentials](https://assetstore.unity.com/packages/audio/sound-fx/foley/footsteps-essentials-189879)
 
+[Crow Sound Effect HD](https://pixabay.com/sound-effects/crow-sound-effect-hd-336784/)

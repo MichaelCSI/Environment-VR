@@ -71,8 +71,8 @@ Material:
     - _QueueOffset: 0
     - _Smoothness: 1
     - _ThicknessRemap: 1
-    - _WindPower: 1.5
-    - _WindStrength: 0.79
+    - _WindPower: 0
+    - _WindStrength: 0
     m_Colors:
     - _HueVariation: {r: 0, g: 0.9019608, b: 0.827451, a: 0.101960786}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

@@ -22,10 +22,14 @@ public class GarbageInside : MonoBehaviour
     [Header("Optional Audio to play when object enters bin")]
     public AudioSource audioSource;    // Optional audio source
 
-    [Header("Post Processing (URP)")]
+    [Header("Post Processing (URP) (for 1st bin only)")]
     public Volume postProcessVolume;  // Assign your Global Volume
     private ColorAdjustments colorAdjustments;
     public float colorFadeSpeed = 2f; // How fast saturation changes
+
+    [Header("Deer Controller (for 3rd bin only)")]
+    public DeerController deer;
+
 
     private bool garbageInBin = false;
 
@@ -98,6 +102,12 @@ public class GarbageInside : MonoBehaviour
                     StopCoroutine(saturationCoroutine);
 
                 saturationCoroutine = StartCoroutine(LerpSaturation(garbageInBin ? 0f : -100f));
+            }
+
+            // For 3rd bin, trigger deer sequence when garbage is in bin
+            if (garbageInBin && deer != null)
+            {
+                deer.StartDeerSequence();
             }
         }
     }
