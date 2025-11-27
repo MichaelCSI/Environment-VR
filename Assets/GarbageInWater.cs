@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class GarbageInWater : MonoBehaviour
 {
-    [Header("Object Transform (fish)")]
-    public Transform fishTransform;
+    [Header("Object Transforms (1 or more fish)")]
+    public Transform[] fishTransforms;
 
     [Header("Buoyancy Settings")]
     public Transform waterSurface;       // Reference to water plane transform
@@ -22,7 +22,7 @@ public class GarbageInWater : MonoBehaviour
 
     void Start()
     {
-        fishTransform.gameObject.SetActive(false);
+        SetAllFishActive(false);
         sodaRigidBody = GetComponent<Rigidbody>();
     }
 
@@ -57,14 +57,14 @@ public class GarbageInWater : MonoBehaviour
             CleanWaterColor();
         }
 
-        // Update fish status
-        if (canInWater && fishTransform.gameObject.activeSelf)
+        // Update fish status based on if can is in the water
+        if (canInWater)
         {
-            fishTransform.gameObject.SetActive(false);
+            SetAllFishActive(false);
         }
-        else if (!canInWater && !fishTransform.gameObject.activeSelf)
+        else
         {
-            fishTransform.gameObject.SetActive(true);
+            SetAllFishActive(true);
         }
     }
 
@@ -88,5 +88,17 @@ public class GarbageInWater : MonoBehaviour
         Color target = startColor;
         Color lerped = Color.Lerp(current, target, colorLerpSpeed);
         waterMaterial.SetColor(deepColorProperty, lerped);
+    }
+
+    // Enable/disable all fish
+    private void SetAllFishActive(bool active)
+    {
+        if (fishTransforms == null) return;
+
+        foreach (Transform fish in fishTransforms)
+        {
+            if (fish != null && fish.gameObject.activeSelf != active)
+                fish.gameObject.SetActive(active);
+        }
     }
 }

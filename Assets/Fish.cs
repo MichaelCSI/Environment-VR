@@ -20,14 +20,11 @@ public class FishJump : MonoBehaviour
     private AudioSource audioSource;
 
     private Vector3 startPos;
-    private Quaternion startRot;
-
 
     // Fish gets enabled when garbage is out of water
     void OnEnable()
     {
         startPos = transform.position;
-        startRot = transform.rotation;
         audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(JumpLoop());
@@ -70,6 +67,12 @@ public class FishJump : MonoBehaviour
         AudioClip startClip = null;
         int startIndex = -1;
 
+        // Rotate fish to face jump direction
+        Vector3 lookDir = (target - start);
+        lookDir.y = 0; // keep fish horizontal
+        if (lookDir != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(lookDir, Vector3.up);
+
         // Play jump sound
         if (jumpSounds.Length > 0)
         {
@@ -92,9 +95,9 @@ public class FishJump : MonoBehaviour
 
             transform.position = horizontalPos + Vector3.up * height;
 
-            // Rotation tilt
+            // Rotation tilt (flopping in air) on Z axis combined with rotation to face target
             float tilt = Mathf.Sin(t * Mathf.PI) * sideTilt;
-            transform.rotation = startRot * Quaternion.Euler(0, 0, tilt);
+            transform.rotation = Quaternion.LookRotation(lookDir) * Quaternion.Euler(0, 0, tilt);
 
             yield return null;
         }
@@ -108,9 +111,5 @@ public class FishJump : MonoBehaviour
 
             audioSource.PlayOneShot(jumpSounds[endIndex]);
         }
-
-        // Reset only rotation (keep position)
-        transform.rotation = startRot;
     }
-
 }
