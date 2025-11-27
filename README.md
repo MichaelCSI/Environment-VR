@@ -2,6 +2,10 @@
 
 The goal of this project is to gain experience developing in VR and explore how immersive media can be used to create a meaningful and engaging experience. The themes of this project include immersive educational media, inclusion, and accessibility, so we have chosen to develop a VR application that explores the importance of positive environmental actions in an engaging, accessible, and gamified way. 
 
+## Technology
+
+Built with Unity 6000.2.7f2 and tested on the Meta Quest 3s Headset. Assuming dependencies are met and the editor has been configured correctly, the app can be built and run from Unity using "File" > "Build And Run" with the headset connected in developer mode.
+
 
 ## Group Members
 Angel Obi
